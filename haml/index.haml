@@ -1,7 +1,7 @@
 !!! 5
 %html
 	%head
-		%title= "MY TITLE"
+		%title= "Rare Finds"
 		%meta{ :content => "MY DESCRIPTION", :name => "description" }
 		%meta{ :content => "MY AUTHOR", :name => "author" }
 		%meta{ :charset => "UTF-8" }
@@ -11,9 +11,83 @@
 		%link{ :href => "./css/main.css", :media => "screen", :rel => "stylesheet" }
 		%script{:type => 'text/javascript', :data => {:main => 'js/main'}, :src => 'js/require.js'}
 	%body.no-scroll
-		#loader.lasso Loading...
-		#container.hidden 
-			Container
+
+		#container.hidden
+			/ #loader.lasso 
+			/ 	%h2 Loading...
+
+			%header
+				#headerContainer.lasso
+					#player
+					#socials
+						%a{:href => 'https://soundcloud.com/rare-finds', :target => '_blank'}
+							#soundcloud.socialLink
+						%a{:href => 'https://twitter.com/rare_finds', :target => '_blank'}
+							#twitter.socialLink
+						%a{:href => 'https://www.facebook.com/RareFindsMusic', :target => '_blank'}
+							#facebook.socialLink
+
+			#content.lasso
+				.panel#left
+					#tagline.padding
+						.lasso
+							Rare Finds is a Record Label Based in Sydney.
+					#nav.padding
+						/nav links here
+						.navLink.js-navLink{ :'data-context' => 'aboutUs'}
+							.arrow
+								.selector
+							.linkName About Us
+						.navLink.js-navLink{ :'data-context' => 'artists'}
+							.arrow
+								.selector
+							.linkName Artists
+						.navLink.js-navLink{ :'data-context' => 'contactUs'}
+							.arrow
+								.selector
+							.linkName Contact Us
+					#list
+				.panel#right
+					#picture
+						#aboutUs.padding.featureImg.js-featureImg{:style => "background-image:url(./img/aboutUs.jpg)"}
+						#artists.padding.featureImg.js-featureImg{:style => "background-image:url(./img/artists.jpg)"}
+						#contactUs.padding.featureImg.js-featureImg{:style => "background-image:url(./img/contactUs.jpg)"}
+
+						%img#aboutUs{:href => './img/aboutUs.jpg'}
+						%img#artists{:href => './img/artists.jpg'}
+						%img#contactUs{:href => './img/contactUs.jpg'}
+
+					#content
+						#aboutUs.padding.panelContent.js-panelContent
+							%h1 About Us
+							%h2 Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem 
+						#artists.padding.panelContent.js-panelContent
+							%h1 Artists
+							/artist links here
+							.navLink.js-navLink{ :'data-context' => 'theKiteStringTangle'}
+								.arrow
+									.selector
+								.linkName Kite String
+							.navLink.js-navLink{ :'data-context' => 'majorLeagues'}
+								.arrow
+									.selector
+								.linkName Major Leagues
+						#contactUs.padding.panelContent.js-panelContent
+							%h1 Contact Us
+							%h2 Lorem Lorem Lorem
+
+						#theKiteStringTangle.padding.panelContent.js-panelContent
+							%h1 The Kite String Tangle
+
+						#majorLeagues.padding.panelContent.js-panelContent
+							%h1 Major Leagues
+
+
+
+
+
+			%footer
+				#logo.lasso
 
 			:javascript
 				var _gaq = _gaq || [];

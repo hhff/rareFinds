@@ -3,11 +3,11 @@ define(['controller'], function(controller){
 	app = new Object();
 
 	app._init = function(){
-		//controller._init();		
+		controller._init();		
 	};
 
 	app._removeLoader = function(){
-		alert('this');
+		//lert('this');
 		$('#loader, #container').toggleClass('hidden');
 		$('body').removeClass('no-scroll');
 	};

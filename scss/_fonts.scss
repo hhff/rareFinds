@@ -1,0 +1,7 @@
+$bodyFont: Source Sans Pro Light;
+$headerFont: Ostrich Sans Black;
+$secondaryFont: Ostrich Sans Regular;
+
+@include font-face("Source Sans Pro Light", font-files("SourceSansPro-Light.woff", "SourceSansPro-Light.otf", "SourceSansPro-Light.svg"));
+@include font-face("Ostrich Sans Black", font-files("ostrich-black.woff", "ostrich-black.otf", "ostrich-black.svg"));
+@include font-face("Ostrich Sans Regular", font-files("ostrich-regular.woff", "ostrich-regular.otf", "ostrich-regular.svg"));
