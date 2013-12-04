@@ -1,0 +1,27 @@
+!!! 5
+%html
+	%head
+		%title= "MY TITLE"
+		%meta{ :content => "MY DESCRIPTION", :name => "description" }
+		%meta{ :content => "MY AUTHOR", :name => "author" }
+		%meta{ :charset => "UTF-8" }
+		%meta{ :name => "viewport", :content => "width=device-width" }
+		%meta{ :name => "viewport", :content => "initial-scale=1" }
+		%meta{ :name => "viewport", :content => "maximum-scale=1" }
+		%link{ :href => "./css/main.css", :media => "screen", :rel => "stylesheet" }
+		%script{:type => 'text/javascript', :data => {:main => 'js/main'}, :src => 'js/require.js'}
+	%body.no-scroll
+		#loader.lasso Loading...
+		#container.hidden 
+			Container
+
+			:javascript
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', YOUR_CODE']);
+				_gaq.push(['_trackPageview']);
+				(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();

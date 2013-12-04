@@ -1,0 +1,44 @@
+@import "normalize";
+@import "compass";
+@import "customMixins";
+
+body {
+  width:100%;
+  height:100%;
+
+  &.no-scroll{
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.hidden{
+  pointer-events:none;
+  @include opacity(0);
+  z-index: -1;
+}
+
+.lasso{
+  top:50%;
+  @include transform(translateY(-50%));
+}
+
+#loader{
+  @include customTransition(opacity, 2s, ease-in-out, 0s);
+
+  position:absolute;
+  width:20%;
+  margin:0 40%;
+  text-align: center;
+}
+
+#container {
+  @include customTransition(opacity, 2s, ease-in-out, 2s);
+
+  width:100%;
+  height:100%;
+  display:block;
+  position:relative;
+}
