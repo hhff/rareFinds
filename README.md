@@ -1,4 +1,4 @@
-haml-scss-require-GA_boilerplate
-================================
+rareFinds
+=========
 
-Boilerplate w/ Haml / Scss / Require &amp; Google Analytics baked in
+Website for Sydney Record label Rare Finds
