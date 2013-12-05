@@ -19,6 +19,7 @@
 			%header
 				#headerContainer.lasso
 					#player
+						<object class="lasso" height="20" width="100%"><param name="movie" value="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/9789061&amp;color=6d6d6d&amp;auto_play=false&amp;player_type=tiny"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="20" width="100%" src="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/9789061&amp;color=6d6d6d&amp;auto_play=false&amp;player_type=tiny"></embed></object>
 					#socials
 						%a{:href => 'https://soundcloud.com/rare-finds', :target => '_blank'}
 							#soundcloud.socialLink
@@ -47,6 +48,11 @@
 								.selector
 							.linkName Contact Us
 					#list
+						%form.lasso.padding#js-emailForm
+							%input#email{:type => 'email', :spellcheck => 'false', :autocomplete => 'false', :placeholder => 'Get Updates'}
+							#emailSubmit
+								.arrow
+
 				.panel#right
 					#picture
 						#aboutUs.padding.featureImg.js-featureImg{:style => "background-image:url(./img/aboutUs.jpg)"}
@@ -63,6 +69,7 @@
 							%h2 Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem 
 						#artists.padding.panelContent.js-panelContent
 							%h1 Artists
+
 							/artist links here
 							.navLink.js-navLink{ :'data-context' => 'theKiteStringTangle'}
 								.arrow
@@ -72,12 +79,25 @@
 								.arrow
 									.selector
 								.linkName Major Leagues
+
 						#contactUs.padding.panelContent.js-panelContent
 							%h1 Contact Us
 							%h2 Lorem Lorem Lorem
 
 						#theKiteStringTangle.padding.panelContent.js-panelContent
 							%h1 The Kite String Tangle
+
+							/Artist External Links don't require js-navLink or a data-context
+							%a{:href => 'https://www.facebook.com/RareFindsMusic', :target => '_blank'}
+								.navLink
+									.arrow
+										.selector
+									.linkName Soundcloud
+							%a{:href => 'https://www.facebook.com/RareFindsMusic', :target => '_blank'}
+								.navLink
+									.arrow
+										.selector
+									.linkName Facebook
 
 						#majorLeagues.padding.panelContent.js-panelContent
 							%h1 Major Leagues

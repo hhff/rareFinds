@@ -371,12 +371,23 @@ table {
 }
 
 /* line 7, ../scss/main.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 11, ../scss/main.scss */
 body {
   width: 100%;
   height: 100%;
   background-color: #f1f2f2;
 }
-/* line 12, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 11, ../scss/main.scss */
+  body {
+    background-color: #a9d6a5;
+  }
+}
+/* line 20, ../scss/main.scss */
 body.no-scroll {
   position: fixed;
   overflow: hidden;
@@ -384,7 +395,7 @@ body.no-scroll {
   width: 100%;
 }
 
-/* line 20, ../scss/main.scss */
+/* line 28, ../scss/main.scss */
 .hidden {
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -392,7 +403,7 @@ body.no-scroll {
   z-index: -1;
 }
 
-/* line 26, ../scss/main.scss */
+/* line 34, ../scss/main.scss */
 .lasso {
   top: 50%;
   left: 50%;
@@ -404,7 +415,7 @@ body.no-scroll {
   position: relative;
 }
 
-/* line 33, ../scss/main.scss */
+/* line 41, ../scss/main.scss */
 #loader {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -428,17 +439,17 @@ body.no-scroll {
   text-align: center;
 }
 
-/* line 42, ../scss/main.scss */
+/* line 50, ../scss/main.scss */
 h1 {
   font-family: Source Sans Pro Light;
 }
 
-/* line 46, ../scss/main.scss */
+/* line 54, ../scss/main.scss */
 h2 {
   font-family: Source Sans Pro Light;
 }
 
-/* line 50, ../scss/main.scss */
+/* line 58, ../scss/main.scss */
 #container {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -461,26 +472,38 @@ h2 {
   position: absolute;
   min-height: 740px;
 }
-/* line 57, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 58, ../scss/main.scss */
+  #container {
+    height: 1020px;
+  }
+}
+/* line 69, ../scss/main.scss */
 #container header {
   width: 100%;
   height: 70px;
   background-color: #e6e7e8;
   position: absolute;
 }
-/* line 63, ../scss/main.scss */
+/* line 75, ../scss/main.scss */
 #container header #headerContainer {
   width: 960px;
   height: 40px;
 }
-/* line 67, ../scss/main.scss */
+/* line 79, ../scss/main.scss */
 #container header #headerContainer #player {
   width: 60%;
   height: 100%;
   display: inline-block;
   float: left;
 }
-/* line 74, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 79, ../scss/main.scss */
+  #container header #headerContainer #player {
+    display: none;
+  }
+}
+/* line 90, ../scss/main.scss */
 #container header #headerContainer #socials {
   width: 40%;
   height: 100%;
@@ -488,7 +511,14 @@ h2 {
   display: inline-block;
   float: left;
 }
-/* line 81, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 90, ../scss/main.scss */
+  #container header #headerContainer #socials {
+    margin-left: 30%;
+    text-align: center;
+  }
+}
+/* line 102, ../scss/main.scss */
 #container header #headerContainer #socials .socialLink {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -514,33 +544,46 @@ h2 {
   opacity: 0.6;
   padding-right: 25px;
 }
-/* line 90, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 102, ../scss/main.scss */
+  #container header #headerContainer #socials .socialLink {
+    float: none;
+  }
+}
+/* line 115, ../scss/main.scss */
 #container header #headerContainer #socials .socialLink:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 95, ../scss/main.scss */
+/* line 120, ../scss/main.scss */
 #container header #headerContainer #socials #facebook {
   background: url("../img/facebook.png") no-repeat center center;
   background-size: contain;
 }
-/* line 100, ../scss/main.scss */
+/* line 125, ../scss/main.scss */
 #container header #headerContainer #socials #twitter {
   background: url("../img/twitter.png") no-repeat center center;
   background-size: contain;
 }
-/* line 105, ../scss/main.scss */
+/* line 130, ../scss/main.scss */
 #container header #headerContainer #socials #soundcloud {
   background: url("../img/soundcloud.png") no-repeat center center;
   background-size: contain;
 }
-/* line 113, ../scss/main.scss */
+/* line 138, ../scss/main.scss */
 #container #content {
   width: 960px;
   height: 600px;
   position: relative;
 }
-/* line 118, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 138, ../scss/main.scss */
+  #container #content {
+    width: 480px;
+    height: 880px;
+  }
+}
+/* line 148, ../scss/main.scss */
 #container #content .panel {
   height: 100%;
   position: relative;
@@ -548,14 +591,26 @@ h2 {
   width: 50%;
   display: inline-block;
 }
-/* line 125, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 148, ../scss/main.scss */
+  #container #content .panel {
+    width: 100%;
+  }
+}
+@media (max-width: 960px) {
+  /* line 159, ../scss/main.scss */
+  #container #content .panel#left {
+    height: auto;
+  }
+}
+/* line 165, ../scss/main.scss */
 #container #content .panel .padding {
   padding: 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 130, ../scss/main.scss */
+/* line 170, ../scss/main.scss */
 #container #content .panel #tagline {
   height: 120px;
   position: relative;
@@ -567,7 +622,13 @@ h2 {
   line-height: 55px;
   letter-spacing: 3px;
 }
-/* line 143, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 170, ../scss/main.scss */
+  #container #content .panel #tagline {
+    text-align: center;
+  }
+}
+/* line 187, ../scss/main.scss */
 #container #content .panel #nav {
   height: 380px;
   width: 100%;
@@ -575,13 +636,26 @@ h2 {
   display: block;
   float: left;
 }
-/* line 151, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 187, ../scss/main.scss */
+  #container #content .panel #nav {
+    height: 60px;
+  }
+}
+/* line 199, ../scss/main.scss */
 #container #content .panel .navLink {
   width: 100%;
   height: 50px;
   cursor: pointer;
 }
-/* line 159, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 199, ../scss/main.scss */
+  #container #content .panel .navLink {
+    width: 32%;
+    display: inline-block;
+  }
+}
+/* line 212, ../scss/main.scss */
 #container #content .panel .navLink:hover .arrow .selector {
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
@@ -591,14 +665,14 @@ h2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 166, ../scss/main.scss */
+/* line 219, ../scss/main.scss */
 #container #content .panel .navLink .arrow {
   width: 30px;
   height: 100%;
   display: inline-block;
   float: left;
 }
-/* line 172, ../scss/main.scss */
+/* line 225, ../scss/main.scss */
 #container #content .panel .navLink .arrow .selector {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -633,7 +707,7 @@ h2 {
   transform: translateX(-3px);
   -webkit-backface-visibility: hidden;
 }
-/* line 188, ../scss/main.scss */
+/* line 241, ../scss/main.scss */
 #container #content .panel .navLink .linkName {
   float: left;
   display: inline-block;
@@ -643,16 +717,102 @@ h2 {
   line-height: 55px;
   letter-spacing: 1px;
 }
-/* line 201, ../scss/main.scss */
+/* line 254, ../scss/main.scss */
 #container #content .panel #list {
   height: 100px;
   width: 100%;
   position: relative;
-  background-color: purple;
   display: block;
   float: left;
 }
-/* line 210, ../scss/main.scss */
+/* line 263, ../scss/main.scss */
+#container #content .panel #list form input {
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+  width: 400px;
+  padding: 10px;
+  border: 4px solid black;
+  font-family: Source Sans Pro Light;
+  font-size: 14px;
+  margin-right: 10px;
+  background-color: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+}
+/* line 277, ../scss/main.scss */
+#container #content .panel #list form input:focus {
+  outline: none;
+}
+/* line 281, ../scss/main.scss */
+#container #content .panel #list form input.valid {
+  background-color: #a9d6a5;
+}
+/* line 285, ../scss/main.scss */
+#container #content .panel #list form input.invalid {
+  background-color: #ffc2c9;
+}
+/* line 290, ../scss/main.scss */
+#container #content .panel #list form #emailSubmit {
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  border: 4px solid black;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+}
+/* line 301, ../scss/main.scss */
+#container #content .panel #list form #emailSubmit:hover .arrow {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 306, ../scss/main.scss */
+#container #content .panel #list form #emailSubmit .arrow {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid black;
+  margin: 16px 17px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+/* line 316, ../scss/main.scss */
 #container #content .panel #picture {
   height: 120px;
   position: relative;
@@ -660,7 +820,7 @@ h2 {
   display: block;
   float: left;
 }
-/* line 217, ../scss/main.scss */
+/* line 323, ../scss/main.scss */
 #container #content .panel #picture .featureImg {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -685,12 +845,12 @@ h2 {
   opacity: 0;
   background-size: contain;
 }
-/* line 225, ../scss/main.scss */
+/* line 331, ../scss/main.scss */
 #container #content .panel #picture .featureImg.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 231, ../scss/main.scss */
+/* line 337, ../scss/main.scss */
 #container #content .panel #content {
   height: 480px;
   width: 100%;
@@ -698,7 +858,7 @@ h2 {
   display: block;
   float: left;
 }
-/* line 238, ../scss/main.scss */
+/* line 344, ../scss/main.scss */
 #container #content .panel #content .panelContent {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -724,32 +884,39 @@ h2 {
   opacity: 0;
   pointer-events: none;
 }
-/* line 247, ../scss/main.scss */
+/* line 353, ../scss/main.scss */
 #container #content .panel #content .panelContent.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   pointer-events: auto;
 }
-/* line 252, ../scss/main.scss */
+/* line 358, ../scss/main.scss */
 #container #content .panel #content .panelContent h1 {
   margin: 8px 0px;
   font-family: Ostrich Sans black;
   letter-spacing: 1px;
 }
-/* line 258, ../scss/main.scss */
+/* line 364, ../scss/main.scss */
 #container #content .panel #content .panelContent h2 {
   font-family: Source Sans Pro Light;
   font-size: 14px;
   line-height: 24px;
 }
-/* line 277, ../scss/main.scss */
+/* line 383, ../scss/main.scss */
 #container footer {
   width: 100%;
   height: 70px;
   position: absolute;
   bottom: 0;
+  background-color: #f1f2f2;
 }
-/* line 283, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 383, ../scss/main.scss */
+  #container footer {
+    position: fixed;
+  }
+}
+/* line 394, ../scss/main.scss */
 #container footer #logo {
   width: 200px;
   height: 50px;

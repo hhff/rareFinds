@@ -17,7 +17,9 @@
       <!-- %h2 Loading... -->
       <header>
         <div class='lasso' id='headerContainer'>
-          <div id='player'></div>
+          <div id='player'>
+            <object class="lasso" height="20" width="100%"><param name="movie" value="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/9789061&amp;color=6d6d6d&amp;auto_play=false&amp;player_type=tiny"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="20" width="100%" src="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/9789061&amp;color=6d6d6d&amp;auto_play=false&amp;player_type=tiny"></embed></object>
+          </div>
           <div id='socials'>
             <a href='https://soundcloud.com/rare-finds' target='_blank'>
               <div class='socialLink' id='soundcloud'></div>
@@ -59,7 +61,14 @@
               <div class='linkName'>Contact Us</div>
             </div>
           </div>
-          <div id='list'></div>
+          <div id='list'>
+            <form class='lasso padding' id='js-emailForm'>
+              <input autocomplete='false' id='email' placeholder='Get Updates' spellcheck='false' type='email'>
+              <div id='emailSubmit'>
+                <div class='arrow'></div>
+              </div>
+            </form>
+          </div>
         </div>
         <div class='panel' id='right'>
           <div id='picture'>
@@ -97,6 +106,23 @@
             </div>
             <div class='padding panelContent js-panelContent' id='theKiteStringTangle'>
               <h1>The Kite String Tangle</h1>
+              <!-- Artist External Links don't require js-navLink or a data-context -->
+              <a href='https://www.facebook.com/RareFindsMusic' target='_blank'>
+                <div class='navLink'>
+                  <div class='arrow'>
+                    <div class='selector'></div>
+                  </div>
+                  <div class='linkName'>Soundcloud</div>
+                </div>
+              </a>
+              <a href='https://www.facebook.com/RareFindsMusic' target='_blank'>
+                <div class='navLink'>
+                  <div class='arrow'>
+                    <div class='selector'></div>
+                  </div>
+                  <div class='linkName'>Facebook</div>
+                </div>
+              </a>
             </div>
             <div class='padding panelContent js-panelContent' id='majorLeagues'>
               <h1>Major Leagues</h1>
