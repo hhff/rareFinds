@@ -743,7 +743,7 @@ h2 {
   }
 }
 /* line 250, ../scss/main.scss */
-#container #content .panel .navLink:hover .arrow .selector {
+#container #content .panel .navLink:hover .arrow .selector, #container #content .panel .navLink.active .arrow .selector {
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
   -ms-transform: translateX(0px);

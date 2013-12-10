@@ -2,13 +2,22 @@
 !!! 5
 %html
 	%head
-		%title= "Rare Finds"
-		%meta{ :content => "MY DESCRIPTION", :name => "description" }
-		%meta{ :content => "MY AUTHOR", :name => "author" }
+		%title= "RARE FINDS | A record label based in Sydney."
+		%meta{ :content => "Rare Finds is a Record Label Based in Sydney.", :name => "description" }
+		%meta{ :content => "Rare Finds", :name => "author" }
 		%meta{ :charset => "UTF-8" }
 		%meta{ :name => "viewport", :content => "width=device-width" }
 		%meta{ :name => "viewport", :content => "initial-scale=1" }
 		%meta{ :name => "viewport", :content => "maximum-scale=1" }
+
+		%meta{ :property => "og:title", :content => "RARE FINDS | A record label based in Sydney." }
+		%meta{ :property => "og:type", :content => "website" }
+		%meta{ :property => "og:image", :content => "http://www.rare-finds.com.au/img/fb-image.jpg" }
+		%meta{ :property => "og:url", :content => "http://www.rare-finds.com.au" }
+		%meta{ :property => "og:site_name", :content => "Rare Finds Australia" }
+
+		%link{:rel => "icon", :type => "image/png", :href=> "./img/favicon.png" }
+
 		%link{ :href => "./css/main.css", :media => "screen", :rel => "stylesheet" }
 		%script{:type => 'text/javascript', :data => {:main => 'js/main'}, :src => 'js/require.js'}
 		%script{:type => 'text/javascript', :src => 'js/vendor/soundcloud.js' }
@@ -82,20 +91,7 @@
 
 						<?php perch_content('Artists'); ?>
 
-
-
-
-
 			%footer
 				#logo.lasso
 
-			:javascript
-				var _gaq = _gaq || [];
-				_gaq.push(['_setAccount', YOUR_CODE']);
-				_gaq.push(['_trackPageview']);
-				(function() {
-				var ga = document.createElement('script');
-				ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				})();
+			<?php perch_content('Analytics'); ?>

@@ -2,13 +2,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rare Finds</title>
-    <meta content='MY DESCRIPTION' name='description'>
-    <meta content='MY AUTHOR' name='author'>
+    <title>RARE FINDS | A record label based in Sydney.</title>
+    <meta content='Rare Finds is a Record Label Based in Sydney.' name='description'>
+    <meta content='Rare Finds' name='author'>
     <meta charset='UTF-8'>
     <meta content='width=device-width' name='viewport'>
     <meta content='initial-scale=1' name='viewport'>
     <meta content='maximum-scale=1' name='viewport'>
+    <meta content='RARE FINDS | A record label based in Sydney.' property='og:title'>
+    <meta content='website' property='og:type'>
+    <meta content='http://www.rare-finds.com.au/img/fb-image.jpg' property='og:image'>
+    <meta content='http://www.rare-finds.com.au' property='og:url'>
+    <meta content='Rare Finds Australia' property='og:site_name'>
+    <link href='./img/favicon.png' rel='icon' type='image/png'>
     <link href='./css/main.css' media='screen' rel='stylesheet'>
     <script data-main='js/main' src='js/require.js' type='text/javascript'></script>
     <script src='js/vendor/soundcloud.js' type='text/javascript'></script>
@@ -98,17 +104,7 @@
       <footer>
         <div class='lasso' id='logo'></div>
       </footer>
-      <script>
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', YOUR_CODE']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
+      <?php perch_content('Analytics'); ?>
     </div>
   </body>
 </html>

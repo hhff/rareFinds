@@ -1,11 +1,15 @@
 ToDo
 - Finish Mobile
-- Artist Link Colors
-- Loader
 - Google Analytics
 
+- Deploy
+
+- Robots.txt
+- XML Sitemap
+- Facebook Meta Tags
 
 Documentation
 - Image sizing
-- Dropbox vs File Upload
+- Dropbox
 - Artists is a magical page
+- Soundcloud playing while navigating
