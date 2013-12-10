@@ -1,3 +1,4 @@
+<?php include('perch/runtime.php'); ?>
 !!! 5
 %html
 	%head
@@ -10,16 +11,18 @@
 		%meta{ :name => "viewport", :content => "maximum-scale=1" }
 		%link{ :href => "./css/main.css", :media => "screen", :rel => "stylesheet" }
 		%script{:type => 'text/javascript', :data => {:main => 'js/main'}, :src => 'js/require.js'}
+		%script{:type => 'text/javascript', :src => 'js/vendor/soundcloud.js' }
 	%body.no-scroll
 
+		#loader
+			#spinner.lasso
 		#container.hidden
-			/ #loader.lasso 
-			/ 	%h2 Loading...
 
 			%header
 				#headerContainer.lasso
 					#player
-						<object class="lasso" height="20" width="100%"><param name="movie" value="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/9789061&amp;color=6d6d6d&amp;auto_play=false&amp;player_type=tiny"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="20" width="100%" src="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/9789061&amp;color=6d6d6d&amp;auto_play=false&amp;player_type=tiny"></embed></object>
+					#url
+						<?php perch_content('Soundcloud Url'); ?>
 					#socials
 						%a{:href => 'https://soundcloud.com/rare-finds', :target => '_blank'}
 							#soundcloud.socialLink
@@ -35,7 +38,7 @@
 							Rare Finds is a Record Label Based in Sydney.
 					#nav.padding
 						/nav links here
-						.navLink.js-navLink{ :'data-context' => 'aboutUs'}
+						.navLink.js-navLink{ :'data-context' => 'about-us'}
 							.arrow
 								.selector
 							.linkName About Us
@@ -43,64 +46,41 @@
 							.arrow
 								.selector
 							.linkName Artists
-						.navLink.js-navLink{ :'data-context' => 'contactUs'}
+						<?php perch_content_custom('Custom Pages', array('template'=>'_page_nav.html','sort-order'=>'DESC'));?>
+						.navLink.js-navLink{ :'data-context' => 'contact-us'}
 							.arrow
 								.selector
 							.linkName Contact Us
 					#list
-						%form.lasso.padding#js-emailForm
-							%input#email{:type => 'email', :spellcheck => 'false', :autocomplete => 'false', :placeholder => 'Get Updates'}
+						%form.lasso.padding#js-emailForm{ :action => "http://rarefindsau.createsend.com/t/d/s/itdkj/", :method => "post", :target => "_blank" }
+							%input#email{:type => 'email', :name => "cm-itdkj-itdkj", :spellcheck => 'false', :autocomplete => 'off', :placeholder => 'Get Updates'}
 							#emailSubmit
 								.arrow
 
 				.panel#right
 					#picture
-						#aboutUs.padding.featureImg.js-featureImg{:style => "background-image:url(./img/aboutUs.jpg)"}
-						#artists.padding.featureImg.js-featureImg{:style => "background-image:url(./img/artists.jpg)"}
-						#contactUs.padding.featureImg.js-featureImg{:style => "background-image:url(./img/contactUs.jpg)"}
+						<?php perch_content_custom('About Us', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
 
-						%img#aboutUs{:href => './img/aboutUs.jpg'}
-						%img#artists{:href => './img/artists.jpg'}
-						%img#contactUs{:href => './img/contactUs.jpg'}
+						<?php perch_content('Artists Header Image'); ?>
+	
+						<?php perch_content_custom('Custom Pages', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
+
+						<?php perch_content_custom('Contact Us', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
+
+						<?php perch_content_custom('Artists', array('template'=>'_artist_pics.html','sort-order'=>'DESC'));?>
 
 					#content
-						#aboutUs.padding.panelContent.js-panelContent
-							%h1 About Us
-							%h2 Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem 
+						<?php perch_content('About Us'); ?>
+
 						#artists.padding.panelContent.js-panelContent
 							%h1 Artists
+							<?php perch_content_custom('Artists', array('template'=>'_artist_nav.html','sort-order'=>'DESC'));?>
 
-							/artist links here
-							.navLink.js-navLink{ :'data-context' => 'theKiteStringTangle'}
-								.arrow
-									.selector
-								.linkName Kite String
-							.navLink.js-navLink{ :'data-context' => 'majorLeagues'}
-								.arrow
-									.selector
-								.linkName Major Leagues
+						<?php perch_content('Custom Pages'); ?>
 
-						#contactUs.padding.panelContent.js-panelContent
-							%h1 Contact Us
-							%h2 Lorem Lorem Lorem
+						<?php perch_content('Contact Us'); ?>
 
-						#theKiteStringTangle.padding.panelContent.js-panelContent
-							%h1 The Kite String Tangle
-
-							/Artist External Links don't require js-navLink or a data-context
-							%a{:href => 'https://www.facebook.com/RareFindsMusic', :target => '_blank'}
-								.navLink
-									.arrow
-										.selector
-									.linkName Soundcloud
-							%a{:href => 'https://www.facebook.com/RareFindsMusic', :target => '_blank'}
-								.navLink
-									.arrow
-										.selector
-									.linkName Facebook
-
-						#majorLeagues.padding.panelContent.js-panelContent
-							%h1 Major Leagues
+						<?php perch_content('Artists'); ?>
 
 
 

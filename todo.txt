@@ -1,0 +1,11 @@
+ToDo
+- Finish Mobile
+- Artist Link Colors
+- Loader
+- Google Analytics
+
+
+Documentation
+- Image sizing
+- Dropbox vs File Upload
+- Artists is a magical page

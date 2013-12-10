@@ -1,3 +1,4 @@
+<?php include('perch/runtime.php'); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,15 +11,18 @@
     <meta content='maximum-scale=1' name='viewport'>
     <link href='./css/main.css' media='screen' rel='stylesheet'>
     <script data-main='js/main' src='js/require.js' type='text/javascript'></script>
+    <script src='js/vendor/soundcloud.js' type='text/javascript'></script>
   </head>
   <body class='no-scroll'>
+    <div id='loader'>
+      <div class='lasso' id='spinner'></div>
+    </div>
     <div class='hidden' id='container'>
-      <!-- #loader.lasso -->
-      <!-- %h2 Loading... -->
       <header>
         <div class='lasso' id='headerContainer'>
-          <div id='player'>
-            <object class="lasso" height="20" width="100%"><param name="movie" value="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/9789061&amp;color=6d6d6d&amp;auto_play=false&amp;player_type=tiny"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="20" width="100%" src="https://player.soundcloud.com/player.swf?url=https%3A//api.soundcloud.com/playlists/9789061&amp;color=6d6d6d&amp;auto_play=false&amp;player_type=tiny"></embed></object>
+          <div id='player'></div>
+          <div id='url'>
+            <?php perch_content('Soundcloud Url'); ?>
           </div>
           <div id='socials'>
             <a href='https://soundcloud.com/rare-finds' target='_blank'>
@@ -42,7 +46,7 @@
           </div>
           <div class='padding' id='nav'>
             <!-- nav links here -->
-            <div class='navLink js-navLink' data-context='aboutUs'>
+            <div class='navLink js-navLink' data-context='about-us'>
               <div class='arrow'>
                 <div class='selector'></div>
               </div>
@@ -54,7 +58,8 @@
               </div>
               <div class='linkName'>Artists</div>
             </div>
-            <div class='navLink js-navLink' data-context='contactUs'>
+            <?php perch_content_custom('Custom Pages', array('template'=>'_page_nav.html','sort-order'=>'DESC'));?>
+            <div class='navLink js-navLink' data-context='contact-us'>
               <div class='arrow'>
                 <div class='selector'></div>
               </div>
@@ -62,8 +67,8 @@
             </div>
           </div>
           <div id='list'>
-            <form class='lasso padding' id='js-emailForm'>
-              <input autocomplete='false' id='email' placeholder='Get Updates' spellcheck='false' type='email'>
+            <form action='http://rarefindsau.createsend.com/t/d/s/itdkj/' class='lasso padding' id='js-emailForm' method='post' target='_blank'>
+              <input autocomplete='off' id='email' name='cm-itdkj-itdkj' placeholder='Get Updates' spellcheck='false' type='email'>
               <div id='emailSubmit'>
                 <div class='arrow'></div>
               </div>
@@ -72,61 +77,21 @@
         </div>
         <div class='panel' id='right'>
           <div id='picture'>
-            <div class='padding featureImg js-featureImg' id='aboutUs' style='background-image:url(./img/aboutUs.jpg)'></div>
-            <div class='padding featureImg js-featureImg' id='artists' style='background-image:url(./img/artists.jpg)'></div>
-            <div class='padding featureImg js-featureImg' id='contactUs' style='background-image:url(./img/contactUs.jpg)'></div>
-            <img href='./img/aboutUs.jpg' id='aboutUs'>
-            <img href='./img/artists.jpg' id='artists'>
-            <img href='./img/contactUs.jpg' id='contactUs'>
+            <?php perch_content_custom('About Us', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
+            <?php perch_content('Artists Header Image'); ?>
+            <?php perch_content_custom('Custom Pages', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
+            <?php perch_content_custom('Contact Us', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
+            <?php perch_content_custom('Artists', array('template'=>'_artist_pics.html','sort-order'=>'DESC'));?>
           </div>
           <div id='content'>
-            <div class='padding panelContent js-panelContent' id='aboutUs'>
-              <h1>About Us</h1>
-              <h2>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</h2>
-            </div>
+            <?php perch_content('About Us'); ?>
             <div class='padding panelContent js-panelContent' id='artists'>
               <h1>Artists</h1>
-              <!-- artist links here -->
-              <div class='navLink js-navLink' data-context='theKiteStringTangle'>
-                <div class='arrow'>
-                  <div class='selector'></div>
-                </div>
-                <div class='linkName'>Kite String</div>
-              </div>
-              <div class='navLink js-navLink' data-context='majorLeagues'>
-                <div class='arrow'>
-                  <div class='selector'></div>
-                </div>
-                <div class='linkName'>Major Leagues</div>
-              </div>
+              <?php perch_content_custom('Artists', array('template'=>'_artist_nav.html','sort-order'=>'DESC'));?>
             </div>
-            <div class='padding panelContent js-panelContent' id='contactUs'>
-              <h1>Contact Us</h1>
-              <h2>Lorem Lorem Lorem</h2>
-            </div>
-            <div class='padding panelContent js-panelContent' id='theKiteStringTangle'>
-              <h1>The Kite String Tangle</h1>
-              <!-- Artist External Links don't require js-navLink or a data-context -->
-              <a href='https://www.facebook.com/RareFindsMusic' target='_blank'>
-                <div class='navLink'>
-                  <div class='arrow'>
-                    <div class='selector'></div>
-                  </div>
-                  <div class='linkName'>Soundcloud</div>
-                </div>
-              </a>
-              <a href='https://www.facebook.com/RareFindsMusic' target='_blank'>
-                <div class='navLink'>
-                  <div class='arrow'>
-                    <div class='selector'></div>
-                  </div>
-                  <div class='linkName'>Facebook</div>
-                </div>
-              </a>
-            </div>
-            <div class='padding panelContent js-panelContent' id='majorLeagues'>
-              <h1>Major Leagues</h1>
-            </div>
+            <?php perch_content('Custom Pages'); ?>
+            <?php perch_content('Contact Us'); ?>
+            <?php perch_content('Artists'); ?>
           </div>
         </div>
       </div>

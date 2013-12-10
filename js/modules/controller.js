@@ -8,6 +8,14 @@ define(['jquery'], function($){
 
 	controller._init = function(){
 
+		queryString = controller._checkQuery();
+
+		controller._initSoundcloud();
+
+		if(queryString != false){
+			controller._navClick(queryString)
+		}
+
 		//View Bindings Here
 		$navLinks.on('click',function(){
 			var $me = $(this),
@@ -70,6 +78,11 @@ define(['jquery'], function($){
 	}
 
 	controller._navClick = function(context){
+		var field = '#/',
+			stateObj = { foo: "bar" };
+
+		history.pushState(stateObj, context, field+context);
+
 
 		$panelContent.removeClass('active');
 		$panelContent.filter('#'+context).addClass('active');
@@ -82,6 +95,43 @@ define(['jquery'], function($){
 		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		return re.test(email);
 	}
+
+	controller._checkQuery = function(){
+		var field = '#/';
+		var url = window.location.href;
+		if(url.indexOf(field) != -1)
+		    return url.split(field)[1];
+		return false
+	}
+
+	controller._initSoundcloud = function(){
+		var url = $('#url').text().trim(),
+			$playerContainer = $('#player');
+
+		var stringSupplant = function (o) {
+		  return this.replace(
+		    /\{([^{}]*)\}/g,
+		    function (a, b) {
+		      var r = o[b];
+		      return typeof r === 'string' || typeof r === 'number' ? r : a;
+		    }
+		  );
+		};
+
+		SC.oEmbed(url, { auto_play: false }, function(oEmbed) {
+			var soundcloudID = (oEmbed.html.split('url=')[1].split('&')[0]),
+				widgetParams = '&color=6d6d6d&show_comments=false',
+				embedCode = stringSupplant.call(controller._miniPlayer, {
+					widgetParams: widgetParams,
+					soundcloudID: soundcloudID
+				});
+
+			$playerContainer.append(embedCode);
+		});
+	}
+
+
+	controller._miniPlayer = '<object class="lasso" height="20" width="100%"><param name="movie" value="https://player.soundcloud.com/player.swf?url={soundcloudID}&player_type=tiny{widgetParams}"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="20" width="100%" src="https://player.soundcloud.com/player.swf?url={soundcloudID}&player_type=tiny{widgetParams}"></embed></object>';
 
 
 	return controller;

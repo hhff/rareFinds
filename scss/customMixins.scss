@@ -24,3 +24,26 @@
   border-bottom: 5px solid transparent;
   border-left: 8px solid black;
 }
+
+@mixin animation($q) {
+  -webkit-animation: $q;
+  -moz-animation: $q;
+  -o-animation: $q;
+  -ms-animation: $q;
+  animation: $q;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

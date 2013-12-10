@@ -7,7 +7,6 @@ define(['controller'], function(controller){
 	};
 
 	app._removeLoader = function(){
-		//lert('this');
 		$('#loader, #container').toggleClass('hidden');
 		$('body').removeClass('no-scroll');
 	};

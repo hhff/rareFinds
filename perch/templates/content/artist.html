@@ -1,0 +1,76 @@
+<div class="padding panelContent js-panelContent" id="<perch:content id="artistName" type="text" label="Artist Name" urlify="true" />">
+  <h1>
+    <perch:content id="artistName" type="text" label="Artist Name" required="true" />
+  </h1>
+  <h2>
+    <perch:content id="artistBio" type="textarea" label="Artist Bio" textile="true" editor="markitup" imagewidth="640" imageheight="480" />
+  </h2>
+
+  <perch:if exists="artistWebsite">
+
+    <a href='<perch:content id="artistWebsite" label="Website" type="text" />' target="_blank">
+      <div class="navLink">
+        <div class="arrow">
+          <div class="selector"></div>
+        </div>
+        <div class="linkName">Website</div>
+      </div>
+    </a>
+
+  </perch:if>
+
+  <perch:if exists="artistFacebook">
+
+    <a href='<perch:content id="artistFacebook" label="Facebook" type="text"/>' target="_blank">
+      <div class="navLink">
+        <div class="arrow">
+          <div class="selector"></div>
+        </div>
+        <div class="linkName">Facebook</div>
+      </div>
+    </a>
+
+  </perch:if>
+
+  <perch:if exists="artistTwitter">
+
+    <a href='<perch:content id="artistTwitter" label="Twitter" type="text"></perch:content>' target="_blank">
+      <div class="navLink">
+        <div class="arrow">
+          <div class="selector"></div>
+        </div>
+        <div class="linkName">Twitter</div>
+      </div>
+    </a>
+
+  </perch:if>
+
+  <perch:if exists="artistSoundcloud">
+
+    <a href='<perch:content id="artistSoundcloud" label="Souncloud" type="text"></perch:content>' target="_blank">
+      <div class="navLink">
+        <div class="arrow">
+          <div class="selector"></div>
+        </div>
+        <div class="linkName">Soundcloud</div>
+      </div>
+    </a>
+
+  </perch:if>
+
+  <perch:if exists="artistPresspack">
+
+    <a href='<perch:content id="artistPresspack" label="Presspack" type="text"></perch:content>' target="_blank">
+      <div class="navLink">
+        <div class="arrow">
+          <div class="selector"></div>
+        </div>
+        <div class="linkName">Presspack</div>
+      </div>
+    </a>
+
+  </perch:if>
+
+  <img style="visibility:hidden;" href='<perch:content id="artistPic" type="image" label="Image" width="960" height="240" crop="true" help="Image must be 960px X 240px.  If a different size is uploaded, it will automatically crop to this size from the center." />' />
+
+</div>
