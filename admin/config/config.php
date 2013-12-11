@@ -10,10 +10,10 @@
     
     define('PERCH_TZ', 'UTC');
 
-    define('PERCH_EMAIL_FROM', 'will@rare-finds.com.au');
-    define('PERCH_EMAIL_FROM_NAME', 'William Weightman');
+    define('PERCH_EMAIL_FROM', 'hugh@siloarts.net');
+    define('PERCH_EMAIL_FROM_NAME', 'Hugh Francis');
 
-    define('PERCH_LOGINPATH', '/perch');
+    define('PERCH_LOGINPATH', '/admin');
     define('PERCH_PATH', str_replace(DIRECTORY_SEPARATOR.'config', '', dirname(__FILE__)));
     define('PERCH_CORE', PERCH_PATH.DIRECTORY_SEPARATOR.'core');
 
