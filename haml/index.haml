@@ -25,6 +25,27 @@
 
 		#loader
 			#spinner.lasso
+		#mobileNav
+			.navLink.js-navLink{ :'data-context' => 'about-us'}
+				.arrow
+					.selector
+				.linkName.lasso About Us
+			.navLink.js-navLink{ :'data-context' => 'artists'}
+				.arrow
+					.selector
+				.linkName.lasso Artists
+			<?php perch_content_custom('Custom Pages', array('template'=>'_mobile_nav.html','sort-order'=>'DESC'));?>
+			.navLink.js-navLink{ :'data-context' => 'contact-us'}
+				.arrow
+					.selector
+				.linkName.lasso Contact Us
+
+			#list
+				%form.lasso.padding#js-emailForm{ :action => "http://rarefindsau.createsend.com/t/d/s/itdkj/", :method => "post", :target => "_blank" }
+					%input#email{:type => 'email', :name => "cm-itdkj-itdkj", :spellcheck => 'false', :autocomplete => 'off', :placeholder => 'Get Updates'}
+
+			.navLink
+
 		#container.hidden
 
 			%header
@@ -39,6 +60,7 @@
 							#twitter.socialLink
 						%a{:href => 'https://www.facebook.com/RareFindsMusic', :target => '_blank'}
 							#facebook.socialLink
+					#mobileNavSwitch
 
 			#content.lasso
 				.panel#left

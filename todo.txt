@@ -2,8 +2,6 @@ ToDo
 - Finish Mobile
 - Google Analytics
 
-- Deploy
-
 - Robots.txt
 - XML Sitemap
 - Facebook Meta Tags

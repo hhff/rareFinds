@@ -442,13 +442,7 @@ body {
   height: 100%;
   background-color: #f1f2f2;
 }
-@media (max-width: 960px) {
-  /* line 16, ../scss/main.scss */
-  body {
-    background-color: #a9d6a5;
-  }
-}
-/* line 25, ../scss/main.scss */
+/* line 21, ../scss/main.scss */
 body.no-scroll {
   position: fixed;
   overflow: hidden;
@@ -456,7 +450,7 @@ body.no-scroll {
   width: 100%;
 }
 
-/* line 33, ../scss/main.scss */
+/* line 29, ../scss/main.scss */
 .hidden {
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -464,7 +458,7 @@ body.no-scroll {
   z-index: -1;
 }
 
-/* line 39, ../scss/main.scss */
+/* line 35, ../scss/main.scss */
 .lasso {
   top: 50%;
   left: 50%;
@@ -476,7 +470,7 @@ body.no-scroll {
   position: relative;
 }
 
-/* line 46, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 #loader {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -499,7 +493,7 @@ body.no-scroll {
   height: 100%;
   text-align: center;
 }
-/* line 54, ../scss/main.scss */
+/* line 50, ../scss/main.scss */
 #loader #spinner {
   width: 100px;
   height: 100px;
@@ -514,17 +508,125 @@ body.no-scroll {
   animation: rotate 3s linear 0s infinite normal;
 }
 
-/* line 66, ../scss/main.scss */
+/* line 62, ../scss/main.scss */
 h1 {
   font-family: Source Sans Pro Light;
 }
 
-/* line 70, ../scss/main.scss */
+/* line 66, ../scss/main.scss */
 h2 {
   font-family: Source Sans Pro Light;
 }
 
-/* line 74, ../scss/main.scss */
+/* line 70, ../scss/main.scss */
+#mobileNav {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 800ms;
+  -moz-transition-duration: 800ms;
+  -o-transition-duration: 800ms;
+  transition-duration: 800ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+  height: 100%;
+  width: 90%;
+  position: absolute;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  background-color: #f1f2f2;
+  z-index: 1;
+  border-right: 1px solid #e6e7e8;
+  box-sizing: border-box;
+  padding-top: 70px;
+}
+/* line 82, ../scss/main.scss */
+#mobileNav.active {
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  transform: translateX(0%);
+}
+/* line 86, ../scss/main.scss */
+#mobileNav .navLink {
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #e6e7e8;
+}
+/* line 91, ../scss/main.scss */
+#mobileNav .navLink .linkName {
+  text-align: center;
+  font-family: Ostrich Sans Regular;
+  font-size: 30px;
+  line-height: 55px;
+  letter-spacing: 1px;
+}
+/* line 100, ../scss/main.scss */
+#mobileNav #list {
+  width: 100%;
+  height: 70px;
+}
+/* line 104, ../scss/main.scss */
+#mobileNav #list form {
+  width: 100%;
+  height: 45px;
+}
+/* line 108, ../scss/main.scss */
+#mobileNav #list form input {
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+  width: 80%;
+  text-align: center;
+  margin-left: 10%;
+  padding: 10px;
+  border: 4px solid black;
+  font-family: Source Sans Pro Light;
+  font-size: 14px;
+  background-color: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+}
+/* line 123, ../scss/main.scss */
+#mobileNav #list form input:focus {
+  outline: none;
+}
+/* line 127, ../scss/main.scss */
+#mobileNav #list form input.valid {
+  background-color: #a9d6a5;
+}
+/* line 131, ../scss/main.scss */
+#mobileNav #list form input.invalid {
+  background-color: #ffc2c9;
+}
+
+/* line 139, ../scss/main.scss */
 #container {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -545,33 +647,33 @@ h2 {
   height: 100%;
   width: 100%;
   position: absolute;
-  min-height: 740px;
 }
 @media (max-width: 960px) {
-  /* line 74, ../scss/main.scss */
+  /* line 139, ../scss/main.scss */
   #container {
-    height: 1020px;
+    height: 100%;
   }
 }
-/* line 85, ../scss/main.scss */
+/* line 150, ../scss/main.scss */
 #container header {
+  z-index: 2;
   width: 100%;
   height: 70px;
   background-color: #e6e7e8;
   position: absolute;
 }
-/* line 91, ../scss/main.scss */
+/* line 157, ../scss/main.scss */
 #container header #headerContainer {
   width: 960px;
   height: 40px;
 }
 @media (max-width: 960px) {
-  /* line 91, ../scss/main.scss */
+  /* line 157, ../scss/main.scss */
   #container header #headerContainer {
     width: 100%;
   }
 }
-/* line 99, ../scss/main.scss */
+/* line 165, ../scss/main.scss */
 #container header #headerContainer #player {
   width: 60%;
   height: 100%;
@@ -579,16 +681,16 @@ h2 {
   float: left;
 }
 @media (max-width: 960px) {
-  /* line 99, ../scss/main.scss */
+  /* line 165, ../scss/main.scss */
   #container header #headerContainer #player {
     display: none;
   }
 }
-/* line 110, ../scss/main.scss */
+/* line 176, ../scss/main.scss */
 #container header #headerContainer #url {
   display: none;
 }
-/* line 114, ../scss/main.scss */
+/* line 180, ../scss/main.scss */
 #container header #headerContainer #socials {
   width: 40%;
   height: 100%;
@@ -597,13 +699,13 @@ h2 {
   float: left;
 }
 @media (max-width: 960px) {
-  /* line 114, ../scss/main.scss */
+  /* line 180, ../scss/main.scss */
   #container header #headerContainer #socials {
-    margin-left: 30%;
+    width: 100%;
     text-align: center;
   }
 }
-/* line 126, ../scss/main.scss */
+/* line 192, ../scss/main.scss */
 #container header #headerContainer #socials .socialLink {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -626,50 +728,91 @@ h2 {
   width: 40px;
   float: right;
   display: inline-block;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
   padding-right: 25px;
 }
 @media (max-width: 960px) {
-  /* line 126, ../scss/main.scss */
+  /* line 192, ../scss/main.scss */
   #container header #headerContainer #socials .socialLink {
     float: none;
   }
 }
-/* line 140, ../scss/main.scss */
+/* line 206, ../scss/main.scss */
 #container header #headerContainer #socials .socialLink:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 145, ../scss/main.scss */
+/* line 211, ../scss/main.scss */
 #container header #headerContainer #socials #facebook {
   background: url("../img/facebook.png") no-repeat center center;
   background-size: contain;
 }
-/* line 150, ../scss/main.scss */
+/* line 216, ../scss/main.scss */
 #container header #headerContainer #socials #twitter {
   background: url("../img/twitter.png") no-repeat center center;
   background-size: contain;
 }
-/* line 155, ../scss/main.scss */
+/* line 221, ../scss/main.scss */
 #container header #headerContainer #socials #soundcloud {
   background: url("../img/soundcloud.png") no-repeat center center;
   background-size: contain;
 }
-/* line 163, ../scss/main.scss */
+/* line 227, ../scss/main.scss */
+#container header #headerContainer #mobileNavSwitch {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+  cursor: pointer;
+  width: 8%;
+  height: 100%;
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+  background: url("../img/switch.png") no-repeat center center;
+  background-size: contain;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+  display: none;
+}
+/* line 240, ../scss/main.scss */
+#container header #headerContainer #mobileNavSwitch:hover, #container header #headerContainer #mobileNavSwitch.active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+@media (max-width: 960px) {
+  /* line 227, ../scss/main.scss */
+  #container header #headerContainer #mobileNavSwitch {
+    display: block;
+  }
+}
+/* line 252, ../scss/main.scss */
 #container #content {
   width: 960px;
   height: 600px;
   position: relative;
 }
 @media (max-width: 960px) {
-  /* line 163, ../scss/main.scss */
+  /* line 252, ../scss/main.scss */
   #container #content {
-    width: 480px;
-    height: 880px;
+    width: 80%;
+    height: 80%;
   }
 }
-/* line 173, ../scss/main.scss */
+/* line 262, ../scss/main.scss */
 #container #content .panel {
   height: 100%;
   position: relative;
@@ -678,26 +821,26 @@ h2 {
   display: inline-block;
 }
 @media (max-width: 960px) {
-  /* line 173, ../scss/main.scss */
+  /* line 262, ../scss/main.scss */
   #container #content .panel {
     width: 100%;
     height: auto;
   }
 }
 @media (max-width: 960px) {
-  /* line 185, ../scss/main.scss */
+  /* line 274, ../scss/main.scss */
   #container #content .panel#left {
     height: auto;
   }
 }
-/* line 191, ../scss/main.scss */
+/* line 280, ../scss/main.scss */
 #container #content .panel .padding {
   padding: 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 196, ../scss/main.scss */
+/* line 285, ../scss/main.scss */
 #container #content .panel #tagline {
   height: 120px;
   position: relative;
@@ -710,12 +853,12 @@ h2 {
   letter-spacing: 3px;
 }
 @media (max-width: 960px) {
-  /* line 196, ../scss/main.scss */
+  /* line 285, ../scss/main.scss */
   #container #content .panel #tagline {
-    text-align: center;
+    display: none;
   }
 }
-/* line 213, ../scss/main.scss */
+/* line 302, ../scss/main.scss */
 #container #content .panel #nav {
   height: 380px;
   width: 100%;
@@ -724,25 +867,26 @@ h2 {
   float: left;
 }
 @media (max-width: 960px) {
-  /* line 213, ../scss/main.scss */
+  /* line 302, ../scss/main.scss */
   #container #content .panel #nav {
-    height: 60px;
+    display: none;
   }
 }
-/* line 225, ../scss/main.scss */
+/* line 314, ../scss/main.scss */
 #container #content .panel .navLink {
   width: 100%;
   height: 50px;
   cursor: pointer;
 }
 @media (max-width: 960px) {
-  /* line 225, ../scss/main.scss */
+  /* line 314, ../scss/main.scss */
   #container #content .panel .navLink {
-    width: 32%;
     display: inline-block;
+    height: 70px;
+    border-bottom: 1px solid #e6e7e8;
   }
 }
-/* line 238, ../scss/main.scss */
+/* line 329, ../scss/main.scss */
 #container #content .panel .navLink:hover .arrow .selector, #container #content .panel .navLink.active .arrow .selector {
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
@@ -752,14 +896,20 @@ h2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 245, ../scss/main.scss */
+/* line 336, ../scss/main.scss */
 #container #content .panel .navLink .arrow {
   width: 30px;
   height: 100%;
   display: inline-block;
   float: left;
 }
-/* line 251, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 336, ../scss/main.scss */
+  #container #content .panel .navLink .arrow {
+    display: none;
+  }
+}
+/* line 346, ../scss/main.scss */
 #container #content .panel .navLink .arrow .selector {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -794,7 +944,7 @@ h2 {
   transform: translateX(-3px);
   -webkit-backface-visibility: hidden;
 }
-/* line 267, ../scss/main.scss */
+/* line 362, ../scss/main.scss */
 #container #content .panel .navLink .linkName {
   float: left;
   display: inline-block;
@@ -804,7 +954,13 @@ h2 {
   line-height: 55px;
   letter-spacing: 1px;
 }
-/* line 280, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 362, ../scss/main.scss */
+  #container #content .panel .navLink .linkName {
+    line-height: 75px;
+  }
+}
+/* line 379, ../scss/main.scss */
 #container #content .panel #list {
   height: 100px;
   width: 100%;
@@ -812,7 +968,13 @@ h2 {
   display: block;
   float: left;
 }
-/* line 289, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 379, ../scss/main.scss */
+  #container #content .panel #list {
+    display: none;
+  }
+}
+/* line 392, ../scss/main.scss */
 #container #content .panel #list form input {
   -webkit-transition-property: background-color;
   -moz-transition-property: background-color;
@@ -842,19 +1004,19 @@ h2 {
   box-sizing: border-box;
   float: left;
 }
-/* line 303, ../scss/main.scss */
+/* line 406, ../scss/main.scss */
 #container #content .panel #list form input:focus {
   outline: none;
 }
-/* line 307, ../scss/main.scss */
+/* line 410, ../scss/main.scss */
 #container #content .panel #list form input.valid {
   background-color: #a9d6a5;
 }
-/* line 311, ../scss/main.scss */
+/* line 414, ../scss/main.scss */
 #container #content .panel #list form input.invalid {
   background-color: #ffc2c9;
 }
-/* line 316, ../scss/main.scss */
+/* line 419, ../scss/main.scss */
 #container #content .panel #list form #emailSubmit {
   width: 45px;
   height: 45px;
@@ -867,12 +1029,12 @@ h2 {
   cursor: pointer;
   background-color: transparent;
 }
-/* line 327, ../scss/main.scss */
+/* line 430, ../scss/main.scss */
 #container #content .panel #list form #emailSubmit:hover .arrow {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 332, ../scss/main.scss */
+/* line 435, ../scss/main.scss */
 #container #content .panel #list form #emailSubmit .arrow {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -899,7 +1061,7 @@ h2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
 }
-/* line 342, ../scss/main.scss */
+/* line 445, ../scss/main.scss */
 #container #content .panel #picture {
   height: 120px;
   position: relative;
@@ -907,7 +1069,7 @@ h2 {
   display: block;
   float: left;
 }
-/* line 349, ../scss/main.scss */
+/* line 452, ../scss/main.scss */
 #container #content .panel #picture .featureImg {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -932,12 +1094,12 @@ h2 {
   opacity: 0;
   background-size: contain;
 }
-/* line 357, ../scss/main.scss */
+/* line 460, ../scss/main.scss */
 #container #content .panel #picture .featureImg.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 363, ../scss/main.scss */
+/* line 466, ../scss/main.scss */
 #container #content .panel #content {
   height: 480px;
   width: 100%;
@@ -945,7 +1107,13 @@ h2 {
   display: block;
   float: left;
 }
-/* line 370, ../scss/main.scss */
+@media (max-width: 960px) {
+  /* line 466, ../scss/main.scss */
+  #container #content .panel #content {
+    height: 300px;
+  }
+}
+/* line 477, ../scss/main.scss */
 #container #content .panel #content .panelContent {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -971,39 +1139,40 @@ h2 {
   opacity: 0;
   pointer-events: none;
 }
-/* line 379, ../scss/main.scss */
+/* line 486, ../scss/main.scss */
 #container #content .panel #content .panelContent.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   pointer-events: auto;
 }
-/* line 384, ../scss/main.scss */
+/* line 491, ../scss/main.scss */
 #container #content .panel #content .panelContent h1 {
   margin: 8px 0px;
   font-family: Ostrich Sans black;
   letter-spacing: 1px;
 }
-/* line 390, ../scss/main.scss */
+/* line 497, ../scss/main.scss */
 #container #content .panel #content .panelContent h2 {
   font-family: Source Sans Pro Light;
   font-size: 14px;
   line-height: 24px;
 }
-/* line 409, ../scss/main.scss */
+/* line 516, ../scss/main.scss */
 #container footer {
+  z-index: 2;
   width: 100%;
   height: 70px;
   position: absolute;
   bottom: 0;
-  background-color: #f1f2f2;
+  background-color: #e6e7e8;
 }
 @media (max-width: 960px) {
-  /* line 409, ../scss/main.scss */
+  /* line 516, ../scss/main.scss */
   #container footer {
     position: fixed;
   }
 }
-/* line 420, ../scss/main.scss */
+/* line 528, ../scss/main.scss */
 #container footer #logo {
   width: 200px;
   height: 50px;

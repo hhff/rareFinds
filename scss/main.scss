@@ -18,10 +18,6 @@ body {
   height:100%;
   background-color: $lightGray;
 
-  @include breakpoint(mobile){
-    background-color: $pastelGreen;
-  }
-
   &.no-scroll{
     position: fixed;
     overflow: hidden;
@@ -71,18 +67,88 @@ h2{
   font-family: $bodyFont;
 }
 
+#mobileNav {
+  @include customTransition(all, 800ms, ease-in-out, 0s);
+  height:100%;
+  width:90%;
+  position:absolute;
+  @include transform(translateX(-100%));
+  background-color: $lightGray;
+  z-index: 1;
+  border-right: 1px solid $midGray;
+  box-sizing: border-box;
+  padding-top: 70px;
+
+  &.active{
+    @include transform(translateX(0%));
+  }
+
+  .navLink{
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid $midGray;
+
+    .linkName{
+      text-align:center;
+      font-family: $secondaryFont;
+      font-size: 30px;
+      line-height: 55px;
+      letter-spacing: 1px;    
+    }
+  }
+
+  #list{
+    width:100%;
+    height:70px;
+
+    form{
+      width:100%;
+      height:45px;
+
+      input{
+        @include customTransition(background-color, 200ms, ease, 0s);
+
+        width: 80%;
+        text-align: center;
+        margin-left: 10%;
+        padding: 10px;
+        border: 4px solid black;
+        font-family: $bodyFont;
+        font-size:14px;
+        background-color: transparent;
+
+        @include box-sizing(border-box);
+        float: left;
+
+        &:focus{
+          outline: none;
+        }
+
+        &.valid{
+          background-color: $pastelGreen;
+        }
+
+        &.invalid{
+          background-color: $pastelRed;
+        }
+      }
+    }
+  }
+}
+
 #container {
   @include customTransition(opacity, 2s, ease-in-out, 2s);
   height: 100%;
   width: 100%;
   position: absolute;
-  min-height: 740px;
+  //min-height: 740px;
 
   @include breakpoint(mobile){
-    height: 1020px;
+    height: 100%;
   }
 
   header{
+    z-index:2;
     width: 100%;
     height: 70px;
     background-color: $midGray;
@@ -119,7 +185,7 @@ h2{
         float: left;
 
         @include breakpoint(mobile){
-          margin-left:30%;
+          width:100%;
           text-align: center;
         }
 
@@ -130,7 +196,7 @@ h2{
           width:40px;
           float:right;
           display: inline-block;
-          @include opacity(0.6);
+          @include opacity(0.4);
           padding-right: 25px;
 
           @include breakpoint(mobile){
@@ -157,6 +223,29 @@ h2{
           background-size:contain;
         }
       }
+
+      #mobileNavSwitch{
+        @include customTransition(opacity, 200ms, ease-in-out, 0s);
+        cursor:pointer;
+        width:8%;
+        height:100%;
+        margin-right: 20px;
+        position:absolute;
+        right:0;
+        background: url('../img/switch.png') no-repeat center center;
+        background-size:contain;
+        @include opacity(0.4);
+        display: none;
+
+        &:hover, &.active{
+          @include opacity(1);
+        }
+
+        @include breakpoint(mobile){
+          display: block;
+        }
+
+      }
     }
   }
 
@@ -166,8 +255,8 @@ h2{
     position:relative;
 
     @include breakpoint(mobile){
-      width:480px;
-      height:880px;
+      width:80%;
+      height:80%;
     }
 
     .panel{
@@ -206,7 +295,7 @@ h2{
         letter-spacing: 3px;
 
         @include breakpoint(mobile){
-          text-align: center;
+          display: none;
         }
       }
 
@@ -218,7 +307,7 @@ h2{
         float:left;
 
         @include breakpoint(mobile){
-          height: 60px;
+          display: none;
         }
       }
 
@@ -227,9 +316,11 @@ h2{
         height: 50px;
         cursor:pointer;
 
+
         @include breakpoint(mobile){
-          width: 32%;
           display: inline-block;
+          height:70px;
+          border-bottom: 1px solid $midGray;
         }
 
         &:hover, &.active{
@@ -247,6 +338,10 @@ h2{
           height: 100%;
           display: inline-block;
           float: left;
+
+          @include breakpoint(mobile){
+            display: none;
+          }
 
           .selector{
             @include customTransition(all, 300ms, ease-in-out, 0s);
@@ -272,7 +367,11 @@ h2{
           font-family: $secondaryFont;
           font-size: 30px;
           line-height: 55px;
-          letter-spacing: 1px;        
+          letter-spacing: 1px;
+
+          @include breakpoint(mobile){
+            line-height: 75px;
+          }        
         }
       }
 
@@ -283,6 +382,10 @@ h2{
         position: relative;
         display: block;
         float: left;
+
+        @include breakpoint(mobile){
+          display: none;
+        }
 
         form{
 
@@ -367,6 +470,10 @@ h2{
         display: block;
         float: left;
 
+        @include breakpoint(mobile){
+          height:300px;
+        }
+
         .panelContent{
           @include customTransition(opacity, 300ms, ease-in-out, 0s);
           height:100%;
@@ -407,11 +514,12 @@ h2{
   }
 
   footer{
+    z-index:2;
     width: 100%;
     height: 70px;
     position: absolute;
     bottom:0;
-    background-color: $lightGray;
+    background-color: $midGray;
 
     @include breakpoint(mobile){
       position:fixed;

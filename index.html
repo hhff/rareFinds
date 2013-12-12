@@ -23,6 +23,33 @@
     <div id='loader'>
       <div class='lasso' id='spinner'></div>
     </div>
+    <div id='mobileNav'>
+      <div class='navLink js-navLink' data-context='about-us'>
+        <div class='arrow'>
+          <div class='selector'></div>
+        </div>
+        <div class='linkName lasso'>About Us</div>
+      </div>
+      <div class='navLink js-navLink' data-context='artists'>
+        <div class='arrow'>
+          <div class='selector'></div>
+        </div>
+        <div class='linkName lasso'>Artists</div>
+      </div>
+      <?php perch_content_custom('Custom Pages', array('template'=>'_mobile_nav.html','sort-order'=>'DESC'));?>
+      <div class='navLink js-navLink' data-context='contact-us'>
+        <div class='arrow'>
+          <div class='selector'></div>
+        </div>
+        <div class='linkName lasso'>Contact Us</div>
+      </div>
+      <div id='list'>
+        <form action='http://rarefindsau.createsend.com/t/d/s/itdkj/' class='lasso padding' id='js-emailForm' method='post' target='_blank'>
+          <input autocomplete='off' id='email' name='cm-itdkj-itdkj' placeholder='Get Updates' spellcheck='false' type='email'>
+        </form>
+      </div>
+      <div class='navLink'></div>
+    </div>
     <div class='hidden' id='container'>
       <header>
         <div class='lasso' id='headerContainer'>
@@ -41,6 +68,7 @@
               <div class='socialLink' id='facebook'></div>
             </a>
           </div>
+          <div id='mobileNavSwitch'></div>
         </div>
       </header>
       <div class='lasso' id='content'>

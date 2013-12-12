@@ -28,6 +28,12 @@ define(['jquery'], function($){
 		})
 
 
+		$('#mobileNavSwitch').on('click', function(){
+			$('#mobileNav').toggleClass('active');
+			$('#mobileNavSwitch').toggleClass('active');
+		})
+
+
 		//Email Validation
 		$('#email').on('keyup', function(e){
 			var $input = $(this),
@@ -89,6 +95,9 @@ define(['jquery'], function($){
 
 		$featureImg.removeClass('active');
 		$featureImg.filter('#'+context).addClass('active');
+
+		$('#mobileNav').removeClass('active');
+		$('#mobileNavSwitch').removeClass('active');
 	}
 
 	controller._validateEmail = function(email){
