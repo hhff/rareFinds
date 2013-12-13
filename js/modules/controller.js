@@ -80,6 +80,8 @@ define(['jquery'], function($){
 			}
 		})
 
+		controller._navClick('about-us');
+
 
 	}
 

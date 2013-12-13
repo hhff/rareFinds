@@ -61,6 +61,10 @@ body {
 
 h1{
   font-family: $bodyFont;
+
+  @include breakpoint(mobile){
+    text-align: center;
+  }
 }
 
 h2{
@@ -84,9 +88,26 @@ h2{
   }
 
   .navLink{
+    @include customTransition(all, 200ms, ease-in-out, 0s);
+
     height: 70px;
     width: 100%;
     border-bottom: 1px solid $midGray;
+    cursor:pointer;
+    background-color: $lightGray;
+
+    &:hover{
+      background-color: $midGray;
+    }
+
+    &:nth-last-child(1) {
+      border-bottom: none;
+      cursor: auto;
+
+      &:hover{
+        background-color: $lightGray;
+      }
+    }
 
     .linkName{
       text-align:center;
@@ -100,6 +121,7 @@ h2{
   #list{
     width:100%;
     height:70px;
+    border-bottom: 1px solid $midGray;
 
     form{
       width:100%;
@@ -477,6 +499,7 @@ h2{
         .panelContent{
           @include customTransition(opacity, 300ms, ease-in-out, 0s);
           height:100%;
+          width:100%;
           overflow-y: scroll;
           display: block;
           position: absolute;
