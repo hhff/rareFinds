@@ -1077,6 +1077,7 @@ h2 {
   -moz-transition-delay: 0s;
   -o-transition-delay: 0s;
   transition-delay: 0s;
+  height: 45px;
   width: 400px;
   padding: 10px;
   border: 4px solid black;
@@ -1089,19 +1090,19 @@ h2 {
   box-sizing: border-box;
   float: left;
 }
-/* line 454, ../scss/main.scss */
+/* line 455, ../scss/main.scss */
 #container #content .panel #list form input:focus {
   outline: none;
 }
-/* line 458, ../scss/main.scss */
+/* line 459, ../scss/main.scss */
 #container #content .panel #list form input.valid {
   background-color: #a9d6a5;
 }
-/* line 462, ../scss/main.scss */
+/* line 463, ../scss/main.scss */
 #container #content .panel #list form input.invalid {
   background-color: #ffc2c9;
 }
-/* line 467, ../scss/main.scss */
+/* line 468, ../scss/main.scss */
 #container #content .panel #list form #emailSubmit {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -1136,19 +1137,19 @@ h2 {
   -moz-filter: grayscale(100%);
   filter: grayscale(100%);
 }
-/* line 483, ../scss/main.scss */
+/* line 484, ../scss/main.scss */
 #container #content .panel #list form #emailSubmit:hover {
   -webkit-filter: grayscale(0%);
   -moz-filter: grayscale(0%);
   filter: grayscale(0%);
 }
-/* line 500, ../scss/main.scss */
+/* line 501, ../scss/main.scss */
 #container #content .panel #home {
   height: 100%;
   width: 100%;
   background-color: pink;
 }
-/* line 506, ../scss/main.scss */
+/* line 507, ../scss/main.scss */
 #container #content .panel #picture {
   height: 120px;
   position: relative;
@@ -1157,12 +1158,12 @@ h2 {
   float: left;
 }
 @media (max-width: 960px) {
-  /* line 513, ../scss/main.scss */
+  /* line 514, ../scss/main.scss */
   #container #content .panel #picture.mainLogo {
     display: none;
   }
 }
-/* line 519, ../scss/main.scss */
+/* line 520, ../scss/main.scss */
 #container #content .panel #picture .featureImg {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -1187,12 +1188,12 @@ h2 {
   opacity: 0;
   background-size: contain;
 }
-/* line 527, ../scss/main.scss */
+/* line 528, ../scss/main.scss */
 #container #content .panel #picture .featureImg.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 533, ../scss/main.scss */
+/* line 534, ../scss/main.scss */
 #container #content .panel #content {
   height: 480px;
   width: 100%;
@@ -1201,18 +1202,18 @@ h2 {
   float: left;
 }
 @media (max-width: 960px) {
-  /* line 540, ../scss/main.scss */
+  /* line 541, ../scss/main.scss */
   #container #content .panel #content.none {
     display: none;
   }
 }
 @media (max-width: 960px) {
-  /* line 533, ../scss/main.scss */
+  /* line 534, ../scss/main.scss */
   #container #content .panel #content {
     top: 0;
   }
 }
-/* line 550, ../scss/main.scss */
+/* line 551, ../scss/main.scss */
 #container #content .panel #content .panelContent {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -1238,38 +1239,38 @@ h2 {
   opacity: 0;
   pointer-events: none;
 }
-/* line 560, ../scss/main.scss */
+/* line 561, ../scss/main.scss */
 #container #content .panel #content .panelContent.displayNone {
   display: none;
 }
 @media (max-width: 960px) {
-  /* line 550, ../scss/main.scss */
+  /* line 551, ../scss/main.scss */
   #container #content .panel #content .panelContent {
     height: auto;
     display: none;
     padding-bottom: 70px;
   }
 }
-/* line 570, ../scss/main.scss */
+/* line 571, ../scss/main.scss */
 #container #content .panel #content .panelContent.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   display: block;
   pointer-events: auto;
 }
-/* line 576, ../scss/main.scss */
+/* line 577, ../scss/main.scss */
 #container #content .panel #content .panelContent h1 {
   margin: 8px 0px;
   font-family: Ostrich Sans black;
   letter-spacing: 1px;
 }
-/* line 582, ../scss/main.scss */
+/* line 583, ../scss/main.scss */
 #container #content .panel #content .panelContent h2 {
   font-family: Source Sans Pro Light;
   font-size: 14px;
   line-height: 24px;
 }
-/* line 601, ../scss/main.scss */
+/* line 602, ../scss/main.scss */
 #container footer {
   z-index: 2;
   width: 100%;
@@ -1278,13 +1279,13 @@ h2 {
   bottom: 0;
 }
 @media (max-width: 960px) {
-  /* line 601, ../scss/main.scss */
+  /* line 602, ../scss/main.scss */
   #container footer {
     position: fixed;
     background-color: #e6e7e8;
   }
 }
-/* line 613, ../scss/main.scss */
+/* line 614, ../scss/main.scss */
 #container footer #logo {
   width: 200px;
   height: 40px;

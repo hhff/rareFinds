@@ -440,6 +440,7 @@ h2{
           input{
             @include customTransition(background-color, 200ms, ease, 0s);
 
+            height:45px;
             width: 400px;
             padding: 10px;
             border: 4px solid black;
