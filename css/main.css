@@ -960,7 +960,7 @@ h2 {
 /* line 362, ../scss/main.scss */
 #container #content .panel .navLink {
   width: 100%;
-  height: 50px;
+  height: 40px;
   cursor: pointer;
 }
 @media (max-width: 960px) {
@@ -1035,7 +1035,7 @@ h2 {
   display: inline-block;
   height: 100%;
   font-family: Ostrich Sans Regular;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 55px;
   letter-spacing: 1px;
 }

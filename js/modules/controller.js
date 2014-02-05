@@ -86,16 +86,18 @@ define(['jquery'], function($){
 			}
 		})
 
-		// controller._navClick('about-us');
+		controller._navClick('about-us', false);
 	}
 
-	controller._navClick = function(context){
+	controller._navClick = function(context, pushState){
 		var field = '#/',
 			stateObj = { foo: "bar" },
 			transitionTime = 300,
 			$activePanel = $panelContent.filter('.active');
 
-		history.pushState(stateObj, context, field+context);
+		if (pushState != false){
+			history.pushState(stateObj, context, field+context);
+		}
 
 
 		$activePanel.removeClass('active');
