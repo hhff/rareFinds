@@ -1,15 +1,8 @@
 ToDo
-- Finish Mobile
 
 - Robots.txt
 - XML Sitemap
 - Facebook Meta Tags
-
-Documentation
-- Image sizing
-- Dropbox
-- Artists is a magical page
-- Soundcloud playing while navigating
 
 RareFinds CPanel
 
@@ -18,5 +11,4 @@ https://www.crazydomains.com.au/login/email-login/
 Email Hosting
 
 User: rarefind
-Pass: yRMxtwD4
-NU: FYHr2NB3
+Pass: nfm4Ytjw

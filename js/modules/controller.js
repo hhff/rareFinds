@@ -4,7 +4,8 @@ define(['jquery'], function($){
 
 	var $navLinks = $('.js-navLink'),
 		$panelContent = $('.js-panelContent'),
-		$featureImg = $('.js-featureImg');
+		$featureImg = $('.js-featureImg'),
+		validEmail = false;
 
 	controller._init = function(){
 
@@ -31,11 +32,14 @@ define(['jquery'], function($){
 		$('#mobileNavSwitch').on('click', function(){
 			$('#mobileNav').toggleClass('active');
 			$('#mobileNavSwitch').toggleClass('active');
+			$('#content').toggleClass('none');
 		})
 
+		$emailInput = $('input#email')
 
 		//Email Validation
-		$('#email').on('keyup', function(e){
+		$emailInput.on('keyup', function(e){
+
 			var $input = $(this),
 				formVal = $(this).val();
 			if (controller._validateEmail(formVal) == true){
@@ -67,33 +71,38 @@ define(['jquery'], function($){
 			$(this).attr('placeholder', 'Get Updates')
 		})
 
-		$('#emailSubmit').on('click', function(){
-			$('#js-emailForm').submit();
-		})
+		// $('#emailSubmit').on('click', function(){
+		// 	$('#js-emailForm').trigger("submit");
+		// })
 
 		$('#js-emailForm').submit(function(e){
+			// console.log(e);
 			if (validEmail == true){
-				//submit
+				formVal = $emailInput.val()
+	
 			}else{
 				e.preventDefault();
-				//no submit
+				console.log('no submit')
 			}
 		})
 
-		controller._navClick('about-us');
-
-
+		// controller._navClick('about-us');
 	}
 
 	controller._navClick = function(context){
 		var field = '#/',
-			stateObj = { foo: "bar" };
+			stateObj = { foo: "bar" },
+			transitionTime = 300,
+			$activePanel = $panelContent.filter('.active');
 
 		history.pushState(stateObj, context, field+context);
 
 
-		$panelContent.removeClass('active');
-		$panelContent.filter('#'+context).addClass('active');
+		$activePanel.removeClass('active');
+		window.setTimeout(function(){
+			$activePanel.addClass('displayNone');
+		}, transitionTime);
+		$panelContent.filter('#'+context).removeClass('displayNone').addClass('active');
 
 		$featureImg.removeClass('active');
 		$featureImg.filter('#'+context).addClass('active');
