@@ -601,6 +601,7 @@ h2 {
   -moz-transition-delay: 0s;
   -o-transition-delay: 0s;
   transition-delay: 0s;
+  padding-top: 5px;
   height: 70px;
   width: 100%;
   border-bottom: 1px solid #e6e7e8;

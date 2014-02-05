@@ -107,7 +107,7 @@ h2{
 
   .navLink{
     @include customTransition(all, 200ms, ease-in-out, 0s);
-
+    padding-top: 5px;
     height: 70px;
     width: 100%;
     border-bottom: 1px solid $midGray;
