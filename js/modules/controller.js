@@ -154,7 +154,7 @@ define(['jquery'], function($){
 	}
 
 
-	controller._miniPlayer = '<object class="lasso" height="20" width="100%"><param name="movie" value="https://player.soundcloud.com/player.swf?url={soundcloudID}&player_type=tiny{widgetParams}"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="20" width="100%" src="https://player.soundcloud.com/player.swf?url={soundcloudID}&player_type=tiny{widgetParams}"></embed></object>';
+	controller._miniPlayer = '<object style="z-index:99" height="20" width="100%"><param name="movie" value="https://player.soundcloud.com/player.swf?url={soundcloudID}&player_type=tiny{widgetParams}"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="20" width="100%" src="https://player.soundcloud.com/player.swf?url={soundcloudID}&player_type=tiny{widgetParams}"></embed></object>';
 
 
 	return controller;
