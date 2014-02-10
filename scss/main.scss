@@ -65,6 +65,7 @@ form{
 
 h1{
   font-family: $bodyFont;
+  font-size: 1.7em;
 
   @include breakpoint(mobile){
     text-align: center;
@@ -73,6 +74,15 @@ h1{
 
 h2{
   font-family: $bodyFont;
+}
+
+h3{
+  font-family: $bodyFont;
+  font-size: 1.7em;
+
+  @include breakpoint(mobile){
+    text-align: center;
+  }
 }
 
 #mobileNav {
@@ -582,8 +592,17 @@ h2{
 
           h2{
             font-family: $bodyFont;
-            font-size: 14px;
-            line-height: 24px;
+            font-size: 13px;
+            line-height: 22px;
+            font-weight: 100;
+            letter-spacing: 1px;
+
+          }
+
+          h3{
+            margin: 24px 0px 8px 0px;
+            font-family: $headerFont;
+            letter-spacing: 1px;
           }
 
         }    

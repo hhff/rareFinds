@@ -68,23 +68,22 @@
 				.panel#left
 					#picture.mainLogo
 						<?php perch_content('Main Logo Image'); ?>
-						/ .lasso
-						/ 	Rare Finds is a Record Label Based in Sydney.
+
 					#nav.padding
 						/nav links here
 						.navLink.js-navLink{ :'data-context' => 'about-us'}
 							.arrow
 								.selector
 							.linkName About Us
+
+						<?php perch_content('Custom Links'); ?>
+
 						<?php perch_content('Blog Link'); ?>
 						.navLink.js-navLink{ :'data-context' => 'artists'}
 							.arrow
 								.selector
 							.linkName Artists
-						.navLink.js-navLink{ :'data-context' => 'prev-artists'}
-							.arrow
-								.selector
-							.linkName Previous Artists
+
 						<?php perch_content_custom('Custom Pages', array('template'=>'_page_nav.html','sort-order'=>'DESC'));?>
 						.navLink.js-navLink{ :'data-context' => 'contact-us'}
 							.arrow
@@ -94,16 +93,12 @@
 						%form.lasso.padding#js-emailForm{ :action => "http://rarefindsau.createsend.com/t/d/s/itdkj/", :method => "post", :target => "_blank" }
 							%input#email{:type => 'email', :name => "cm-itdkj-itdkj", :spellcheck => 'false', :autocomplete => 'off', :placeholder => 'Get Updates'}
 							%input#emailSubmit{:type => 'submit', :value => ''}
-							/ #emailSubmit
-							/	 .arrow
 
 				.panel#right
 					#picture
 						<?php perch_content_custom('About Us', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
 
 						<?php perch_content('Artists Header Image'); ?>
-
-						<?php perch_content('Previous Artists Header Image'); ?>
 	
 						<?php perch_content_custom('Custom Pages', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
 
@@ -118,8 +113,7 @@
 							%h1 Artists
 							<?php perch_content_custom('Artists', array('template'=>'_artist_nav.html','sort-order'=>'DESC','filter'=>'isCurrent', 'match'=>'eq', 'value'=>'Current Artist'));?>
 
-						#prev-artists.padding.panelContent.js-panelContent
-							%h1 Previous Artists
+							%h3 Previous Artists
 							<?php perch_content_custom('Artists', array('template'=>'_artist_nav.html','sort-order'=>'DESC','filter'=>'isCurrent', 'match'=>'eq', 'value'=>'Previous Artist'));?>
 
 						<?php perch_content('Custom Pages'); ?>
@@ -127,8 +121,5 @@
 						<?php perch_content('Contact Us'); ?>
 
 						<?php perch_content('Artists'); ?>
-
-			/ %footer
-			/ 	#logo.lasso
 
 			<?php perch_content('Analytics'); ?>

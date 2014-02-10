@@ -79,8 +79,6 @@
         <div class='panel' id='left'>
           <div class='mainLogo' id='picture'>
             <?php perch_content('Main Logo Image'); ?>
-            <!-- .lasso -->
-            <!-- Rare Finds is a Record Label Based in Sydney. -->
           </div>
           <div class='padding' id='nav'>
             <!-- nav links here -->
@@ -90,18 +88,13 @@
               </div>
               <div class='linkName'>About Us</div>
             </div>
+            <?php perch_content('Custom Links'); ?>
             <?php perch_content('Blog Link'); ?>
             <div class='navLink js-navLink' data-context='artists'>
               <div class='arrow'>
                 <div class='selector'></div>
               </div>
               <div class='linkName'>Artists</div>
-            </div>
-            <div class='navLink js-navLink' data-context='prev-artists'>
-              <div class='arrow'>
-                <div class='selector'></div>
-              </div>
-              <div class='linkName'>Previous Artists</div>
             </div>
             <?php perch_content_custom('Custom Pages', array('template'=>'_page_nav.html','sort-order'=>'DESC'));?>
             <div class='navLink js-navLink' data-context='contact-us'>
@@ -115,8 +108,6 @@
             <form action='http://rarefindsau.createsend.com/t/d/s/itdkj/' class='lasso padding' id='js-emailForm' method='post' target='_blank'>
               <input autocomplete='off' id='email' name='cm-itdkj-itdkj' placeholder='Get Updates' spellcheck='false' type='email'>
               <input id='emailSubmit' type='submit' value=''>
-              <!-- #emailSubmit -->
-              <!-- .arrow -->
             </form>
           </div>
         </div>
@@ -124,7 +115,6 @@
           <div id='picture'>
             <?php perch_content_custom('About Us', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
             <?php perch_content('Artists Header Image'); ?>
-            <?php perch_content('Previous Artists Header Image'); ?>
             <?php perch_content_custom('Custom Pages', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
             <?php perch_content_custom('Contact Us', array('template'=>'_page_pics.html','sort-order'=>'DESC'));?>
             <?php perch_content_custom('Artists', array('template'=>'_artist_pics.html','sort-order'=>'DESC'));?>
@@ -134,9 +124,7 @@
             <div class='padding panelContent js-panelContent' id='artists'>
               <h1>Artists</h1>
               <?php perch_content_custom('Artists', array('template'=>'_artist_nav.html','sort-order'=>'DESC','filter'=>'isCurrent', 'match'=>'eq', 'value'=>'Current Artist'));?>
-            </div>
-            <div class='padding panelContent js-panelContent' id='prev-artists'>
-              <h1>Previous Artists</h1>
+              <h3>Previous Artists</h3>
               <?php perch_content_custom('Artists', array('template'=>'_artist_nav.html','sort-order'=>'DESC','filter'=>'isCurrent', 'match'=>'eq', 'value'=>'Previous Artist'));?>
             </div>
             <?php perch_content('Custom Pages'); ?>
@@ -145,8 +133,6 @@
           </div>
         </div>
       </div>
-      <!-- %footer -->
-      <!-- #logo.lasso -->
       <?php perch_content('Analytics'); ?>
     </div>
   </body>

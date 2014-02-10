@@ -15,6 +15,8 @@ define(['jquery'], function($){
 
 		if(queryString != false){
 			controller._navClick(queryString)
+		}else{
+			controller._navClick('about-us', false);
 		}
 
 		//View Bindings Here
@@ -86,7 +88,6 @@ define(['jquery'], function($){
 			}
 		})
 
-		controller._navClick('about-us', false);
 	}
 
 	controller._navClick = function(context, pushState){

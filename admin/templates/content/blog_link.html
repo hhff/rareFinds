@@ -1,8 +1,10 @@
-<a href="<perch:content id="link" type="text" label="Link" />" target="_blank">
-  <div class='navLink'>
-    <div class='arrow'>
-      <div class='selector'></div>
+<perch:if exists="link">
+  <a href="<perch:content id="link" type="text" label="Link" />" target="_blank">
+    <div class='navLink'>
+      <div class='arrow'>
+        <div class='selector'></div>
+      </div>
+      <div class='linkName'><perch:content id="linkName" type="text" label="Link Name" /></div>
     </div>
-    <div class='linkName'><perch:content id="linkName" type="text" label="Link Name" /></div>
-  </div>
-</a>
+  </a>
+</perch:if>
