@@ -34,12 +34,7 @@
         </div>
         <div class='linkName lasso'>Artists</div>
       </div>
-      <div class='navLink js-navLink' data-context='prev-artists'>
-        <div class='arrow'>
-          <div class='selector'></div>
-        </div>
-        <div class='linkName lasso'>Previous Artists</div>
-      </div>
+      <?php perch_content_custom('Custom Links', array('template'=>'_mobile_nav_external.html','sort-order'=>'DESC'));?>
       <?php perch_content_custom('Custom Pages', array('template'=>'_mobile_nav.html','sort-order'=>'DESC'));?>
       <div class='navLink js-navLink' data-context='contact-us'>
         <div class='arrow'>
@@ -88,13 +83,13 @@
               </div>
               <div class='linkName'>About Us</div>
             </div>
-            <?php perch_content('Custom Links'); ?>
             <div class='navLink js-navLink' data-context='artists'>
               <div class='arrow'>
                 <div class='selector'></div>
               </div>
               <div class='linkName'>Artists</div>
             </div>
+            <?php perch_content('Custom Links'); ?>
             <?php perch_content_custom('Custom Pages', array('template'=>'_page_nav.html','sort-order'=>'DESC'));?>
             <div class='navLink js-navLink' data-context='contact-us'>
               <div class='arrow'>
