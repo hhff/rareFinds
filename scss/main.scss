@@ -43,6 +43,13 @@ form{
   position:relative;
 }
 
+.lasso-content{
+  left:50%;
+  @include transform(translate(-50%, 0%));
+  position:relative;
+  margin-top:70px;
+}
+
 #loader{
   @include customTransition(opacity, 2s, ease-in-out, 0s);
 
