@@ -47,7 +47,11 @@ form{
   left:50%;
   @include transform(translate(-50%, 0%));
   position:relative;
-  margin-top:70px;
+  margin-top:90px;
+
+  @include breakpoint(mobile){
+    margin-top:10px;
+  }
 }
 
 #loader{
